@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Borrow History</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #f4f4f4; }
+        h1 { color: #007bff; }
+        table { width: 80%; margin: auto; border-collapse: collapse; background: white; }
+        th, td { padding: 10px; border: 1px solid #ddd; }
+        th { background-color: #007bff; color: white; }
+        tr:nth-child(even) { background-color: #f2f2f2; }
+        .back-link { display: inline-block; padding: 10px 15px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; }
+        .back-link:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+    <h1>📜 Borrow History</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Book Title</th>
+            <th>Borrower</th>
+            <th>Borrow Date</th>
+            <th>Return Date</th>
+            <th>Late Fee</th>
+        </tr>
+        {% for record in history %}
+        <tr>
+            <td>{{ record[0] }}</td>
+            <td>{{ record[2] }}</td>
+            <td>{{ record[3] }}</td>
+            <td>{{ record[4] }}</td>
+            <td>{{ record[5] if record[5] else 'Not Returned' }}</td>
+            <td>${{ "%.2f"|format(record[6]) }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="/" class="back-link">🏠 Back to Home</a>
+</body>
+</html>
