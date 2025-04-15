@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Movies</h2>
+
+<form method="GET" action="/movies">
+    <input type="text" name="q" value="{{ search }}" placeholder="Search by title or rating" style="padding: 5px; width: 250px;">
+    <button type="submit" style="padding: 5px;">Search</button>
+</form>
+
+<table>
+    <tr>
+        <th>ID</th><th>Title</th><th>Release Year</th><th>Genre</th><th>Rating</th><th>Stock</th>
+    </tr>
+    {% for m in movies %}
+    <tr>
+        <td>{{ m.movie_id }}</td>
+        <td>{{ m.title }}</td>
+        <td>{{ m.release_year }}</td>
+        <td>{{ m.genre }}</td>
+        <td>{{ m.rating }}</td>
+        <td>{{ m.stock }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
+
+

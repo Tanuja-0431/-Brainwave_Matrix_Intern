@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Rental Database</title>
+</head>
+<body>
+    <h1>Movie Rental Customers</h1>
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for customer in customers %}
+            <tr>
+                <td>{{ customer[1] }}</td>  <!-- customer name -->
+                <td>{{ customer[2] }}</td>  <!-- customer email -->
+                <td>{{ customer[3] }}</td>  <!-- customer phone -->
+                <td>{{ customer[4] }}</td>  <!-- customer address -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

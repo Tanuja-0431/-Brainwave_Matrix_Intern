@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <h2 style="text-align: center;margin-top: 20px;">Movie Rental System</h2>
+
+    <!-- Back to Home Button -->
+    <div style="display: flex; justify-content: flex-end; margin-top: 20px; padding-right: 20px;">
+        <div class="info-box" style="background: #eff3f1; padding: 10px; border-radius: 5px; box-shadow: 2px 2px 5px #ccc; width: 160px; text-align: center; cursor: pointer;">
+            <a href="{{ url_for('home') }}" style="text-decoration: none; color: #ea739f; font-weight: bold;">← Back to Home</a>
+        </div>
+    </div>
+    
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 40px;
+        }
+    
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    
+        /* Global Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+    
+        th, td {
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+    
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    
+        /* Hover effect for table rows */
+        tr:hover {
+            background-color: #e0f7fa; /* Light blue background on hover */
+            transform: scale(1.02); /* Slightly enlarge the row */
+            transition: all 0.3s ease; /* Smooth transition effect */
+        }
+        
+    </style>
+       
+</head>
+<body>
+   
+    {% block content %}{% endblock %}
+</body>
+</html>
